@@ -1,0 +1,192 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+
+header{
+    height: 600px;
+}
+
+.container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.logo{
+    height: 40px;
+    float: left;
+    margin-top: 13px;
+    display: block;
+}
+
+nav{
+    padding-top: 20px;
+}
+
+.clearfix{
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+}
+.menu{
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: right;
+}
+
+.menu li{
+    float: left;
+    display: block;
+    margin-left: 40px;
+    text-transform: uppercase;
+
+}
+.menu a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.name1{
+    margin-top: 150px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.name2{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button{
+    border: 3px solid black;
+    border-radius: 7px;
+    display: block;
+    width: 300px;
+    padding: 20px 0;
+    margin: 90px auto;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+/*Работа со второй секцией*/
+
+.sec2{
+    background-color: #4E4E4E;
+    margin: 0;
+}
+
+.uplogo{
+    padding: 100px 0 0 0;
+}
+
+.uplogo h1{
+    color: #FF3399;
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.uplogo p{
+    color: #CC0066;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Тут 3D кнопки начинаются. Создается секция с роддительской перспективой... */
+
+.section{
+    perspective: 1000px;
+}
+
+/* Скорость анимации 1 секунда, повернул все кнопки на 40градусов по икс, и вообще сделал их более менее 3В*/
+.block:nth-child(2){
+    margin-left: 100px;
+
+}
+
+.threblock{
+    padding: 100px 0;
+    transition: 1s;
+    transform: rotateX(40deg);
+    transform-style: preserve-3d;
+
+
+}
+
+.block{
+    padding-top: 17px;
+    width: 190px;
+    height: 230px;
+    float: left;
+    text-align: center;
+    border: 7px solid #FF6699;
+    border-radius: 10px;
+    transition: 0.5s;
+
+}
+/* Я атк понял, это действие при наведении на элмент. Соответсвтенно курсор заменился,
+карточка поднялась верх на 30пикселей, ну и цвет рамки изенился.*/
+
+.block:hover{
+    cursor: pointer;
+    transform: translateZ(30px);
+    border: 7px solid white;
+
+}
+
+/*отдельно изменил цвет текста*/
+.block:hover h3{
+    color: white;
+    transition: 0.1s;
+}
+
+.block:hover p{
+    color: white;
+    transition: 0.1s;
+}
+
+.block h3{
+    font-size: 16px;
+    color: #FF6699;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.block p{
+    font-size: 12px;
+    color: #FF6699;
+}
+
+
+.block:last-child{
+    float: right;
+}
+
+.block:nth-child(2){
+    margin-left: 100px;
+
+}
