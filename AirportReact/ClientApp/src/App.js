@@ -11,18 +11,20 @@ class App extends Component {
         this.onRemoveFlight = this.onRemoveFlight.bind(this);
     }
 
-    loadData() {
-        var xhr = new XMLHttpRequest();
-        xhr.open("get", this.props.apiUrl, true);
-        xhr.onload = function () {
-            var data = JSON.parse(xhr.responseText);
-            this.setState({flights: data});
-        }.bind(this);
-        xhr.send();
+    async onLoadFlight() {
+        var request = await fetch(this.props.apiUrl, {
+            method:"GET",
+            mode:"cors",
+            credentials: "include"
+        });
+        if(request.ok){
+            var responce = await request.json();
+            this.setState({"flights":responce, "isLoading": false})
+        };
     }
 
     componentDidMount() {
-        this.loadData();
+        this.onLoadFlight();
     }
 
     async onAddFlight(flight) {
@@ -39,7 +41,7 @@ class App extends Component {
                     "time": "2021-03-13T23:00:00"
                 })
             });
-            this.loadData();
+            this.onLoadFlight();
             this.render();
         }
     }
@@ -71,7 +73,7 @@ class App extends Component {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
             });
-            this.loadData();
+            this.onLoadFlight();
             this.render();
         }
     }
