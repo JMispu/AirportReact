@@ -39,7 +39,7 @@ namespace AirportReact.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
+            }   
             DB.Flights.UpdateItem(f);
             await DB.Save();
 

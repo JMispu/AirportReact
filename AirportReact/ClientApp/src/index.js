@@ -11,9 +11,7 @@ const rootElement = document.getElementById('root');
 
 ReactDOM.render(
     <BrowserRouter basename={baseUrl}>
-        <FlightList apiUrl={"/api/flights/"}/>
+        <App apiUrl={"/api/flights/"}/>
     </BrowserRouter>,
     rootElement);
-
 registerServiceWorker();
-
