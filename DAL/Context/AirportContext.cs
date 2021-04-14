@@ -17,11 +17,19 @@ namespace DAL.Context
             if (Flight.Any()) return;
 
             Airplane.Add(new Airplane { Name = "Boing_747" });
+            Airplane.Add(new Airplane { Name = "Boing_746" });
             City.Add(new City { Name = "Moscow" });
             City.Add(new City { Name = "London" });
             Flight.Add(new Flight
             {
                 AirplaneID = 1,
+                StartCityID = 1,
+                FinishCityID = 2,
+                Time = new System.DateTime(2021, 3, 13, 23, 0, 0)
+            });
+            Flight.Add(new Flight
+            {
+                AirplaneID = 2,
                 StartCityID = 1,
                 FinishCityID = 2,
                 Time = new System.DateTime(2021, 3, 13, 23, 0, 0)
